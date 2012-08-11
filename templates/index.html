@@ -1,0 +1,222 @@
+<%inherit file="base.html"/>
+<%namespace file="basis/lib/entity.html" import="*"/>
+
+<div class="wrap-line">
+<!-- 图片导航 -->
+
+<div class="tank lcat-area" style="padding-bottom:0">
+<div class="container" id="idContainer">
+	<ul id="idSlider">
+		<li><a href=""> <img src="${static_url}/upload/bz1.jpg" alt="" /> </a></li>
+		<li><a href=""> <img src="${static_url}/upload/bz2.jpg" alt="" /> </a></li>
+		<li><a href=""> <img src="${static_url}/upload/bz3.jpg" alt="" /> </a></li>
+		<li><a href=""> <img src="${static_url}/upload/bz4.jpg" alt="" /> </a></li>
+		<li><a href=""> <img src="${static_url}/upload/bz5.jpg" alt="" /> </a></li>
+	</ul>
+	<ul class="num" id="idNum">
+	</ul>
+</div>
+</div>
+<script>
+var nums = [], timer, n = $$("idSlider").getElementsByTagName("li").length,
+	st = new SlideTrans("idContainer", "idSlider", n, {
+		onStart: function(){
+			forEach(nums, function(o, i){ o.className = st.Index == i ? "on" : ""; })
+		}
+	});
+for(var i = 1; i <= n; AddNum(i++)){};
+function AddNum(i){
+	var num = $$("idNum").appendChild(document.createElement("li"));
+	num.innerHTML = i--;
+	num.onmouseover = function(){
+		timer = setTimeout(function(){ num.className = "on"; st.Auto = false; st.Run(i); }, 200);
+	}
+	num.onmouseout = function(){ clearTimeout(timer); num.className = ""; st.Auto = true; st.Run(); }
+	nums[i] = num;
+}
+st.Run();
+st.Tween = Tween.Quart.easeOut;
+</script>
+<!-- End of 图片导航 -->
+
+<div class="tank ccat-area">
+	<div class="titlebg">
+		<div class="title">
+			<h5>工商动态</h5>
+		</div>
+		<a href = "/entity" class="more">更多&gt;&gt;</a>
+	</div>
+	<div class="content">
+		<ul class="list lh24 f14">
+			${latest_entities(1, 8)}
+		</ul>
+	</div>
+</div>
+
+<div class="tank rcat-area">
+	<div class="titlebg">
+		<div class="title">
+			<h5>最新公告</h5>
+		</div>
+	</div>
+  <div class="content">
+  <ul class="list lh24 f14">
+  </ul>
+  </div>
+</div>
+</div>
+
+<div class="bk3"></div>
+
+<div class="wrap-line">
+<div class="tank lcat-area" style="height:260px">
+
+</div>
+
+<div class="tank ccat-area" style="height:260px">
+	<div class="titlebg">
+		<div class="title">
+			<h5>政务公开</h5>
+		</div>
+		<a href = "http://localhost/entity" class="more">更多&gt;&gt;</a>
+	</div>
+	<div class="content">
+		<ul class="list lh24 f14">
+			${latest_entities(2, 8)}
+		</ul>
+	</div>
+</div>
+
+<div class="tank rcat-area" style="height:260px">
+
+</div>
+
+</div>
+
+<div class="bk3"></div>
+
+<div class="ad-column">
+<a href="#"><img src="${static_url}/images/lzjs.jpg" width="997px"/></a>
+</div>
+
+<div class="bk3"></div>
+
+<div class="wrap-line">
+<div class="tank lcat-area">
+	<div class="titlebg">
+		<div class="title">
+			<h5>工商动态</h5>
+		</div>
+		<a href = "/entity" class="more">更多&gt;&gt;</a>
+	</div>
+	<div class="content">
+		<ul class="list lh24 f14">
+
+		</ul>
+	</div>
+</div>
+
+<div class="tank ccat-area">
+<div class="dtab">
+ <div id="dtitle" class="dtitle">
+   <ul>
+    <li id="tb_1" class="hovertab" onmouseover="x:HoverLi(1);">PYTHON</li>
+    <li id="tb_2" class="normaltab" onmouseover="i:HoverLi(2);">MYSQL</li>
+    <li id="tb_3" class="normaltab" onmouseover="a:HoverLi(3);">NGINX</li>
+   </ul>
+ </div>
+ <div class="content">
+	<div class="dis" id="tbc_01">
+		<ul class="list lh24 f14">
+			${latest_entities(1, 8)}
+		</ul>
+	</div>
+	<div class="undis" id="tbc_02">
+		<ul class="list lh24 f14">
+			${latest_entities(2, 8)}
+		</ul>
+	</div>
+	<div class="undis" id="tbc_03">
+		<ul class="list lh24 f14">
+			${latest_entities(3, 8)}
+		</ul>
+	</div>
+ </div>
+</div>
+
+</div>
+
+<div class="tank rcat-area">
+	<div class="titlebg">
+		<div class="title">
+			<h5>工商动态</h5>
+		</div>
+		<a href = "/entity" class="more">更多&gt;&gt;</a>
+	</div>
+	<div class="content">
+		<ul class="list lh24 f14">
+
+		</ul>
+	</div>
+</div>
+</div>
+
+<div class="bk3"></div>
+
+<div class="wrap-line">
+<div class="tank lcat-area">
+	<div class="titlebg">
+		<div class="title">
+			<h5>工商动态</h5>
+		</div>
+		<a href = "/entity" class="more">更多&gt;&gt;</a>
+	</div>
+	<div class="content">
+		<ul class="list lh24 f14">
+
+		</ul>
+	</div>
+</div>
+
+<div class="tank ccat-area">
+	<div class="titlebg">
+		<div class="title">
+			<h5>工商动态</h5>
+		</div>
+		<a href = "/entity" class="more">更多&gt;&gt;</a>
+	</div>
+	<div class="content">
+		<ul class="list lh24 f14">
+
+		</ul>
+	</div>
+</div>
+
+<div class="tank rcat-area">
+	<div class="titlebg">
+		<div class="title">
+			<h5>工商动态</h5>
+		</div>
+		<a href = "/entity" class="more">更多&gt;&gt;</a>
+	</div>
+	<div class="content">
+		<ul class="list lh24 f14">
+
+		</ul>
+	</div>
+</div>
+</div>
+
+<div class="bk3"></div>
+
+<div class="picnews">
+	<div class="title">
+		<img src="${static_url}/images/picnews.jpg" class="title" width="36px"/>
+	</div>
+	<div class="content">
+		<a href="#"><img src="${static_url}/upload/bz1.jpg"/></a>
+		<a href="#"><img src="${static_url}/upload/bz2.jpg"/></a>
+		<a href="#"><img src="${static_url}/upload/bz3.jpg"/></a>
+		<a href="#"><img src="${static_url}/upload/bz4.jpg"/></a>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+        <script type="text/javascript" src="%s/js/ckeditor/ckeditor.js"></script><script type="text/javascript">
+                      CKEDITOR.replace( '%s',{language:'zh-cn',height:250,pages:true,subtitle:true,textareaid:'content',module:'content',cid:'13',
+        flashupload:true,alowuploadexts:'',allowbrowser:'1',allowuploadnum:'10',authkey:'1b8426a752d07b7232968152c952ccb8',
+        filebrowserUploadUrl : 'http://localhost/pycms',
+        toolbar :
+        [
+        ['Source','-','Templates'],
+                    ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print'],
+                    ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],['ShowBlocks'],['Image','Capture','Flash'],['Maximize'],
+                    '/',
+                    ['Bold','Italic','Underline','Strike','-'],
+                    ['Subscript','Superscript','-'],
+                    ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote'],
+                    ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+                    ['Link','Unlink','Anchor'],
+                    ['Table','HorizontalRule','Smiley','SpecialChar','PageBreak'],
+                    '/',
+                    ['Styles','Format','Font','FontSize'],
+                    ['TextColor','BGColor'],
+                    ['attachment'],
+        ]
+        });
+        </script>

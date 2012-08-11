@@ -1,0 +1,58 @@
+<%inherit file="base.html"/>
+<%namespace file="lib/entity.html" import="*"/>
+
+    <div class="col-left">
+      <div class="crumbs">
+          <a href="/">首页</a> <span>&gt;</span>
+          % for cat in category_ancestors:
+          ${cat[1]} &gt;
+          % endfor
+          正文
+      </div>
+
+      <div id="Article">
+          <h1>${base_entity.title}<br>
+          <span>日期：${base_entity.created_time.year}/${base_entity.created_time.month}/${base_entity.created_time.day}</span>
+          <span>来源：${base_entity.user}</span></h1>
+          
+        <div class="summary">
+            ${entity.content} 
+        </div>
+        
+        <div class="text-c" id="pages">
+        </div>
+<!-- 
+        <p style="margin-bottom:10px"><strong>相关热词搜索：</strong>
+        % if entity.keywords:
+        % for kw in entity.keywords.split():
+        <a class="blue" href="tag=${_uq(kw)}">${kw}</a>
+        % endfor
+        % endif
+        </p>
+
+        <p class="f14"><strong>上一篇：</strong><a href="javascript:alert('第一页');">第一页</a><br>
+         <strong>下一篇：</strong><a href="javascript:alert('最后一页');">最后一页</a></p>
+ -->
+      </div>
+    </div>
+
+    <div class="col-auto">
+		<div class="tank rcat-area">
+			<div class="titlebg">
+				<div class="title">
+					<h5>
+					% for cat in category_ancestors:
+          			${cat[1]}
+         			% endfor
+         			</h5>
+				</div>
+			</div>
+		  <div class="content" style="height:330px">
+		  <ul class="list lh24 f14">
+			${list_entities(1, 13)}
+		  </ul>
+		  </div>
+		</div>
+		</div>
+    </div>
+

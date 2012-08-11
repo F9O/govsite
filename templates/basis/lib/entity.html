@@ -1,0 +1,17 @@
+
+<%def name="latest_entities(catid, count)">
+    % for entity in get_latest_entities(catid, count):
+		 <div class="title-list">
+	     <li><a title="${entity.title}" target="_blank" href="${entity.model.name}/${entity.created_time.year}/${entity.created_time.month}/${entity.created_time.day}/${entity.id}">${entity.title}</a>
+   		 [${entity.created_time.month}-${entity.created_time.day}]</li>
+   		 </div>
+    % endfor
+</%def>
+
+<%def name="list_entities(catid, count)">
+    % for entity in get_latest_entities(catid, count):
+
+	     <li class="title-list" style="height:23px; height:20px\9; width:90%"><a title="${entity.title}" target="_blank" href="${entity.model.name}/${entity.created_time.year}/${entity.created_time.month}/${entity.created_time.day}/${entity.id}">${entity.title}</a></li>
+
+    % endfor
+</%def>
