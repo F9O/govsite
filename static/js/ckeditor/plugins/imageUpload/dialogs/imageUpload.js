@@ -53,7 +53,7 @@ CKEDITOR.dialog.add( 'imageUpload', function( editor )
 					filebrowser : {   
 						action : 'QuickUpload',   
 						target : 'addImage:txtUrl',
-						onSelect:function(fileUrl, errorMessage){   
+						onSelect:function(fileUrl, errorMessage){ 
                         //在这里可以添加其他的操作
 						}
 				},
@@ -65,6 +65,7 @@ CKEDITOR.dialog.add( 'imageUpload', function( editor )
 					//可以查看ckeditor.event doc 了解此段代码   
 					//http://docs.cksource.com/ckeditor_api/   
 					_iframe.on('load', getAjaxResult, _iframe, _funcNum);   
+					alert();
 					
 				},   
 				'for' : [ 'addImage', 'photo']   //'page_id', 'element_id'
